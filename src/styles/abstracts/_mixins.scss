@@ -1,4 +1,4 @@
-@use 'functions' as *;
+@use 'variables' as *;
 
 // ==============================================
 // Responsive Breakpoints
@@ -6,19 +6,19 @@
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'sm' {
-    @media (min-width: 36rem) {
+    @media (min-width: $breakpoint-sm) {
       @content;
     }
   } @else if $breakpoint == 'md' {
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-md) {
       @content;
     }
   } @else if $breakpoint == 'lg' {
-    @media (min-width: 62rem) {
+    @media (min-width: $breakpoint-lg) {
       @content;
     }
   } @else if $breakpoint == 'xl' {
-    @media (min-width: 75rem) {
+    @media (min-width: $breakpoint-xl) {
       @content;
     }
   } @else {
