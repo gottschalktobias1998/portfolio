@@ -119,3 +119,12 @@ $transition-slow: 400ms ease;
 
 $container-max-width: px-to-rem(1200px);
 $container-padding: px-to-rem(24px);
+
+// ==============================================
+// Breakpoints
+// ==============================================
+
+$breakpoint-sm: 36rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 62rem;
+$breakpoint-xl: 75rem;
