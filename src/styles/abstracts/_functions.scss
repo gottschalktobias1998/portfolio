@@ -1,0 +1,23 @@
+
+@use 'sass:math';
+
+// ==============================================
+// Unit Conversion
+// ==============================================
+
+/// Converts pixel values to rem.
+///
+/// @param {Number} $pixels - Pixel value to convert.
+/// @param {Number} $base - Root font size (default: 16px).
+/// @return {Number} Converted rem value.
+@function px-to-rem($pixels, $base: 16px) {
+  @if math.unit($pixels) != 'px' {
+    @error 'px-to-rem() expects a pixel value. Received: #{$pixels}';
+  }
+
+  @if math.unit($base) != 'px' or $base <= 0px {
+    @error 'The base value must be a positive pixel value.';
+  }
+
+  @return math.div($pixels, $base) * 1rem;
+}
