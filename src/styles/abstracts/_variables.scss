@@ -1,0 +1,121 @@
+
+@use 'functions' as *;
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+// Backgrounds
+$color-background: #080a12;
+$color-surface: #101321;
+$color-surface-elevated: #171a2b;
+
+// Text
+$color-text-primary: #f1f1f7;
+$color-text-secondary: #a0a1b2;
+$color-text-muted: #77788a;
+
+// Accent
+$color-accent: #a78bfa;
+$color-accent-hover: #8b5cf6;
+$color-accent-subtle: rgba(167, 139, 250, 0.12);
+
+// Borders
+$color-border: #202235;
+$color-border-hover: #38334f;
+
+// Utility
+$color-success: #34d399;
+$color-error: #f87171;
+
+
+// ==============================================
+// Typography
+// ==============================================
+
+// Font families
+$font-family-base: 'Inter', sans-serif;
+$font-family-heading: 'Inter', sans-serif;
+$font-family-monospace: 'JetBrains Mono', monospace;
+
+// Font sizes
+$font-size-xs: px-to-rem(12px);
+$font-size-sm: px-to-rem(14px);
+$font-size-base: px-to-rem(16px);
+$font-size-lg: px-to-rem(18px);
+$font-size-xl: px-to-rem(20px);
+$font-size-2xl: px-to-rem(24px);
+$font-size-3xl: px-to-rem(30px);
+$font-size-4xl: px-to-rem(36px);
+$font-size-5xl: px-to-rem(48px);
+$font-size-6xl: px-to-rem(60px);
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line heights
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+
+// ==============================================
+// Spacing
+// ==============================================
+
+$spacing-0: 0;
+$spacing-1: px-to-rem(4px);
+$spacing-2: px-to-rem(8px);
+$spacing-3: px-to-rem(12px);
+$spacing-4: px-to-rem(16px);
+$spacing-5: px-to-rem(20px);
+$spacing-6: px-to-rem(24px);
+$spacing-8: px-to-rem(32px);
+$spacing-10: px-to-rem(40px);
+$spacing-12: px-to-rem(48px);
+$spacing-16: px-to-rem(64px);
+$spacing-20: px-to-rem(80px);
+$spacing-24: px-to-rem(96px);
+
+
+// ==============================================
+// Border Radius
+// ==============================================
+
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+$radius-2xl: 16px;
+$radius-full: 9999px;
+
+
+// ==============================================
+// Shadows
+// ==============================================
+
+$shadow-sm: 0 px-to-rem(1px) px-to-rem(2px) rgba(0, 0, 0, 0.2);
+$shadow-md: 0 px-to-rem(4px) px-to-rem(12px) rgba(0, 0, 0, 0.25);
+$shadow-lg: 0 px-to-rem(12px) px-to-rem(32px) rgba(0, 0, 0, 0.3);
+$shadow-accent: 0 0 px-to-rem(24px) rgba(167, 139, 250, 0.15);
+
+
+// ==============================================
+// Transitions
+// ==============================================
+
+$transition-fast: 150ms ease;
+$transition-normal: 250ms ease;
+$transition-slow: 400ms ease;
+
+
+// ==============================================
+// Layout
+// ==============================================
+
+$container-max-width: px-to-rem(1200px);
+$container-padding: px-to-rem(24px);
