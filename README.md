@@ -1,20 +1,20 @@
 ## Git Commit Conventions
 
-Für Commit-Nachrichten verwenden wir das folgende Schema:
+Commit messages follow the conventional format:
 
 `<type>: <description>`
 
-| Präfix | Verwendung |
+| Prefix | Usage |
 |---|---|
-| `feat:` | Neue Funktionen oder Features |
-| `fix:` | Fehlerbehebungen |
-| `style:` | Formatierung und visuelle Änderungen ohne funktionale Auswirkungen |
-| `refactor:` | Code-Umstrukturierungen ohne Änderung des Verhaltens |
-| `chore:` | Konfiguration, Abhängigkeiten und Wartungsarbeiten |
-| `docs:` | Dokumentationsänderungen |
-| `test:` | Hinzufügen oder Ändern von Tests |
+| `feat:` | New features or functionality |
+| `fix:` | Bug fixes |
+| `style:` | Formatting and visual changes without functional impact |
+| `refactor:` | Code restructuring without changing behavior |
+| `chore:` | Configuration, dependencies and maintenance tasks |
+| `docs:` | Documentation changes |
+| `test:` | Adding or modifying tests |
 
-### Beispiele
+### Examples
 
 - `feat: add responsive navigation`
 - `fix: correct mobile layout`
@@ -23,3 +23,30 @@ Für Commit-Nachrichten verwenden wir das folgende Schema:
 - `chore: configure prettier`
 - `docs: document project setup`
 - `test: add navigation component tests`
+
+## SCSS Architecture
+
+The project follows the **7-1 SCSS architecture** to maintain a scalable,
+modular and maintainable stylesheet structure.
+
+### Structure
+
+| Folder | Purpose |
+|---|---|
+| `abstracts/` | Variables, functions, mixins and placeholders |
+| `base/` | Reset, typography and global styles |
+| `components/` | Reusable UI component styles |
+| `layout/` | Layout structures and page sections |
+| `pages/` | Page-specific styles |
+| `themes/` | Theme definitions |
+| `vendors/` | Third-party stylesheets |
+
+### Conventions
+
+- Use Sass modules (`@use` and `@forward`).
+- Avoid deprecated `@import` syntax.
+- Keep all SCSS files centralized in `src/styles/`.
+- Do not place SCSS files alongside React components.
+- Use BEM (Block Element Modifier) for CSS class naming.
+- Use `_index.scss` files as public entry points for each folder.
+- Import the main stylesheet through `src/main.tsx`.
