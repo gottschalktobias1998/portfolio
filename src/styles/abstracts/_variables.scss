@@ -1,0 +1,33 @@
+// Colors
+$color-background: #0d0b12;
+$color-surface: #15121d;
+$color-surface-hover: #1c1826;
+
+$color-text: #f4f0fa;
+$color-text-muted: #a49bad;
+
+$color-accent: #a78bfa;
+$color-accent-hover: #c4b5fd;
+
+$color-border: rgba(255, 255, 255, 0.1);
+
+// Typography
+$font-family-base: 'Inter', system-ui, sans-serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+
+// Layout
+$container-width: 1200px;
+$header-height: 80px;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+$spacing-2xl: 6rem;
+
+// Borders
+$border-radius-sm: 6px;
+$border-radius-md: 12px;
+$border-radius-lg: 20px;
