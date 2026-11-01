@@ -39,7 +39,7 @@ jobs:
       - name: Build application
         run: npm run build
 
-        - name: Deploy to web hosting
+      - name: Deploy to web hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
