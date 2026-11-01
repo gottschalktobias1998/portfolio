@@ -1,5 +1,5 @@
 
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -15,10 +15,15 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   quality:
     name: Quality checks
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -41,3 +46,45 @@ jobs:
 
       - name: Build application
         run: npm run build
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build
+          path: build/client/
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    needs: quality
+    timeout-minutes: 15
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download production build
+        uses: actions/download-artifact@v4
+        with:
+          name: production-build
+          path: ./build/client/
+
+      - name: Deploy to web hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          security: strict
+          local-dir: ./build/client/
+          server-dir: ./
+          dry-run: false
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            deployment-test/**
