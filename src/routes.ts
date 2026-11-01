@@ -6,6 +6,8 @@ import {
 } from '@react-router/dev/routes'
 
 export default [
+  index('./routes/coming-soon.tsx'),
+
   layout('./layouts/language-layout.tsx', [
     route('de', './layouts/german-layout.tsx', [
       index('./routes/de/home.tsx'),
