@@ -1,3 +1,5 @@
+import Footer from '../components/layout/Footer'
+
 export default function ComingSoon() {
   return (
     <div className="coming-soon">
@@ -35,10 +37,7 @@ export default function ComingSoon() {
         </div>
       </main>
 
-      <footer className="coming-soon__footer">
-        <span>© {new Date().getFullYear()} Tobias Gottschalk</span>
-        <span>Mit Sorgfalt entwickelt.</span>
-      </footer>
+      <Footer variant="coming-soon" />
     </div>
   )
 }

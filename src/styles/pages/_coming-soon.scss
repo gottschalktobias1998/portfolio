@@ -1,10 +1,16 @@
+
 @use '../abstracts' as *;
+
+// ========================================
+// Coming Soon Layout
+// ========================================
 
 .coming-soon {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   padding-inline: 2rem;
+
   background:
     radial-gradient(
       ellipse at 50% 45%,
@@ -14,31 +20,35 @@
     #090a11;
 }
 
-.coming-soon__header,
-.coming-soon__footer {
-  width: 100%;
-  max-width: 760px;
-  margin-inline: auto;
-}
+// ========================================
+// Header
+// ========================================
 
 .coming-soon__header {
   display: flex;
-  height: 64px;
+  width: 100%;
+  max-width: 760px;
+  height: 4rem;
   align-items: center;
+  margin-inline: auto;
 }
 
 .coming-soon__logo {
   color: $color-text;
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
   letter-spacing: -0.06em;
 }
+
+// ========================================
+// Main Content
+// ========================================
 
 .coming-soon__main {
   display: grid;
   flex: 1;
   place-items: center;
-  padding-block: 4rem;
+  padding-block: $spacing-2xl;
 }
 
 .coming-soon__content {
@@ -48,34 +58,50 @@
   text-align: center;
 }
 
+// ========================================
+// Status Badge
+// ========================================
+
 .coming-soon__badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid $color-border;
-  border-radius: 999px;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-full;
+
   color: $color-text-muted;
-  font-size: 0.55rem;
-  font-weight: 600;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
   letter-spacing: 0.12em;
 }
 
 .coming-soon__badge-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+
   border-radius: 50%;
   background: $color-accent;
   box-shadow: 0 0 8px rgba($color-accent, 0.8);
 }
 
+// ========================================
+// Typography
+// ========================================
+
 .coming-soon__title {
   display: flex;
   flex-direction: column;
+
   color: $color-text;
-  font-size: clamp(2.5rem, 6vw, 3.75rem);
-  font-weight: 750;
+  font-size: clamp(
+    3.5rem,
+    8vw,
+    5.5rem
+  );
+  font-weight: $font-weight-bold;
   letter-spacing: -0.065em;
   line-height: 1.05;
 
@@ -85,20 +111,26 @@
 }
 
 .coming-soon__description {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.8;
+  margin-top: $spacing-md;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
 }
+
+// ========================================
+// Contact
+// ========================================
 
 .coming-soon__contact {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba($color-accent, 0.35);
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+  padding-bottom: $spacing-2xs;
+
+  border-bottom: $border-width solid rgba($color-accent, 0.35);
+
   color: $color-text;
-  font-size: 0.7rem;
+  font-size: $font-size-sm;
   transition: color 180ms ease;
 
   span {
@@ -110,23 +142,20 @@
   }
 }
 
-.coming-soon__footer {
-  display: flex;
-  min-height: 64px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid $color-border;
-  color: $color-text-muted;
-  font-size: 0.6rem;
-}
+// ========================================
+// Responsive
+// ========================================
 
 @media (max-width: $breakpoint-mobile) {
   .coming-soon {
     padding-inline: 1.25rem;
   }
 
-  .coming-soon__footer {
-    font-size: 0.55rem;
+  .coming-soon__description {
+    max-width: 32rem;
+  }
+
+  .coming-soon__contact {
+    overflow-wrap: anywhere;
   }
 }

@@ -1,10 +1,19 @@
+
 @use '../abstracts' as *;
+
+// ========================================
+// Root Layout
+// ========================================
 
 #root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
+
+// ========================================
+// Header
+// ========================================
 
 .site-header {
   position: sticky;
@@ -22,21 +31,25 @@
     2rem
   );
 
-  border-bottom: 1px solid $color-border;
+  border-bottom: $border-width solid $color-border;
   background: rgba($color-background, 0.85);
   backdrop-filter: blur(16px);
 }
 
 .site-logo {
   color: $color-text;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
   letter-spacing: -0.06em;
 
   span {
     color: $color-accent;
   }
 }
+
+// ========================================
+// Navigation
+// ========================================
 
 .main-navigation {
   display: flex;
@@ -46,7 +59,7 @@
 
 .navigation-link {
   color: $color-text-muted;
-  font-size: 0.9rem;
+  font-size: $font-size-sm;
   transition: color 180ms ease;
 
   &:hover,
@@ -63,9 +76,13 @@
 
 .language-switch {
   color: $color-accent;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
 }
+
+// ========================================
+// Main Content
+// ========================================
 
 .site-main {
   @include container;
@@ -75,17 +92,46 @@
   padding-block: $spacing-2xl;
 }
 
+// ========================================
+// Footer
+// ========================================
+
 .site-footer {
   display: flex;
-  min-height: 80px;
+  min-height: $header-height;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid $color-border;
+
+  border-top: $border-width solid $color-border;
+
+  p,
+  span {
+    font-size: $font-size-xs;
+  }
 
   p {
-    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  &--coming-soon {
+    width: 100%;
+    max-width: 760px;
+    min-height: 4rem;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-inline: auto;
+
+    color: $color-text-muted;
+
+    span {
+      font-size: $font-size-xs;
+    }
   }
 }
+
+// ========================================
+// Responsive Layout
+// ========================================
 
 @media (max-width: $breakpoint-tablet) {
   .site-header {
@@ -116,5 +162,13 @@
 
   .main-navigation {
     justify-content: flex-start;
+  }
+
+  .site-footer--coming-soon {
+    gap: $spacing-xs;
+
+    span {
+      font-size: $font-size-xs;
+    }
   }
 }
