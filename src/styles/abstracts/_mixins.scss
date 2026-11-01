@@ -1,22 +1,39 @@
+
 @use './variables' as *;
 
+// Responsive
 @mixin respond-to($breakpoint) {
   @media (min-width: $breakpoint) {
     @content;
   }
 }
 
+@mixin respond-below($breakpoint) {
+  @media (max-width: ($breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: ($max - 1px)) {
+    @content;
+  }
+}
+
+// Layout
 @mixin container {
-  width: min(100% - 2rem, 1200px);
+  width: min(100% - 2rem, $container-width);
   margin-inline: auto;
 }
 
+// Flexbox
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+// Accessibility
 @mixin focus-ring {
   outline: 2px solid $color-accent;
   outline-offset: 4px;

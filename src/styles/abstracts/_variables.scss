@@ -1,25 +1,88 @@
+
+// ========================================
 // Colors
+// ========================================
+
+// Backgrounds
 $color-background: #0d0b12;
+$color-background-secondary: #110e17;
+
+// Surfaces
 $color-surface: #15121d;
 $color-surface-hover: #1c1826;
+$color-surface-elevated: #211c2b;
 
+// Text
 $color-text: #f4f0fa;
 $color-text-muted: #a49bad;
+$color-text-subtle: #766d80;
 
+// Accent
 $color-accent: #a78bfa;
 $color-accent-hover: #c4b5fd;
+$color-accent-muted: rgba(167, 139, 250, 0.12);
 
+// Borders
 $color-border: rgba(255, 255, 255, 0.1);
+$color-border-strong: rgba(255, 255, 255, 0.18);
 
+// Status
+$color-success: #4ade80;
+$color-warning: #facc15;
+$color-error: #f87171;
+
+
+// ========================================
 // Typography
+// ========================================
+
+// Font Families
 $font-family-base: 'Inter', system-ui, sans-serif;
 $font-family-mono: 'JetBrains Mono', monospace;
 
+// Font Sizes
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 4rem;
+
+// Font Weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line Heights
+$line-height-tight: 1.15;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.7;
+
+// Letter Spacing
+$letter-spacing-tight: -0.045em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+
+
+// ========================================
 // Layout
+// ========================================
+
 $container-width: 1200px;
+$container-width-wide: 1440px;
 $header-height: 80px;
 
+
+// ========================================
 // Spacing
+// ========================================
+
+$spacing-2xs: 0.25rem;
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
@@ -27,7 +90,17 @@ $spacing-lg: 2rem;
 $spacing-xl: 4rem;
 $spacing-2xl: 6rem;
 
+
+// ========================================
 // Borders
+// ========================================
+
+// Radius
 $border-radius-sm: 6px;
 $border-radius-md: 12px;
 $border-radius-lg: 20px;
+$border-radius-full: 9999px;
+
+// Width
+$border-width: 1px;
+$border-width-strong: 2px;

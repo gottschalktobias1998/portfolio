@@ -1,27 +1,35 @@
+
 @use '../abstracts' as *;
 
+// Box sizing
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+// Document
 html {
+  min-width: $breakpoint-small;
   scroll-behavior: smooth;
   scroll-padding-top: $header-height;
+  font-size: $font-size-base;
 }
 
 body {
-  min-width: 320px;
+  min-width: $breakpoint-small;
   min-height: 100vh;
   margin: 0;
   background: $color-background;
   color: $color-text;
   font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+// Media
 img,
 picture,
 video,
@@ -31,6 +39,7 @@ svg {
   max-width: 100%;
 }
 
+// Form elements
 button,
 input,
 textarea,
@@ -38,6 +47,7 @@ select {
   font: inherit;
 }
 
+// Interactive elements
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -52,6 +62,7 @@ button {
   cursor: pointer;
 }
 
+// Selection
 ::selection {
   color: $color-background;
   background: $color-accent;
